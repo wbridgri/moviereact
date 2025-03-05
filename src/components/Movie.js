@@ -13,11 +13,10 @@ const Movie = () => {
         <div className="container mt-4">
             <div className="card">
                 <div className="card-body">
-                <h2 className="card-title">{movie.title}</h2>
-                <p className="card-text">Director: {movie.director}</p>
+                    <h2 className="card-title">{movie.title}</h2>
+                    <p className="card-text">Director: {movie.director}</p>
                 </div>
             </div>
-
 
             <Reviews movieTitle={movie.title} director={movie.director} />
         </div>

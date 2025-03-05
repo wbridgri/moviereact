@@ -5,6 +5,11 @@ const Reviews = () => {
     const [rating, setRating] = useState(1);
     const [review, setReview] = useState("");
     const [reviews, setReviews] = useState([]);
+    /**
+     * 
+     * setting to empty strs and rating default rating to 1/5
+     *  
+     */
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,6 +24,7 @@ const Reviews = () => {
             userName,
             rating,
             review,
+            //this isn't very good, as there's nothing to guarantee that the same review id won't occur some than once.
         };
 
         setReviews([...reviews, newReview]);
@@ -31,9 +37,9 @@ const Reviews = () => {
 
 
     const renderStars = (rating) => {
-        return "★".repeat(rating) + "☆".repeat(5 - rating);
+        return "★".repeat(rating) + "☆".repeat(5 - rating); //inspired by FCC pyramid generator
     };
-
+//setting review text and rating so that handle event collects the value from click event.  Had some assistance on this.
     return (
         <div className="container mt-4">
             <form className="form" onSubmit={handleSubmit}>
@@ -100,7 +106,7 @@ const Reviews = () => {
                     <ul className="list-group">
                         {reviews.map((r) => (
                             <li key={r.id} className="list-group-item">
-                                <strong>{r.userName}</strong> rated this movie {r.rating}/5  
+                                {r.userName} rated this movie {r.rating}/5  
                                 <div style={{ color: "gold", fontSize: "1.2em" }}>
                                     {renderStars(r.rating)}
                                 </div>
