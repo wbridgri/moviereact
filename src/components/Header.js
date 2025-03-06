@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";  
-import { useState } from "react";
+import { useParams } from "react-router-dom";
+
 /**
  * 
  * The nav style is basically verbatim from the bootstrap docs.  I am aware that the movie randomizer only works once
  */
 
+
 const Header = () => {
+    
+    
+    
 
     let ranId = Math.floor(Math.random() * 10) + 1
     return (
@@ -39,7 +44,7 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="navbar-nav">
             <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                <Link className="nav-link" to={`/Movies/${ranId}`}>   
+                <Link className="nav-link" onClick={ranId} to={`/Movies/${ranId}`}>   
                     Random Movie
                 </Link>
                 </li>

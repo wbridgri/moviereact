@@ -18,9 +18,7 @@ const Card = (props) => {
                             Director: {props.director}
                         </p>
                     </div>
-                    <div className="card-body">
-
-                    </div>
+                    
                     
                 </div>
             </Link>

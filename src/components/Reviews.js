@@ -7,11 +7,7 @@ const Reviews = () => {
     const [review, setReview] = useState("");
     const [reviews, setReviews] = useState([]);
     const { id } = useId()
-    /**
-     * 
-     * setting to empty strs and rating default rating to 1/5
-     *  
-     */
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,7 +22,6 @@ const Reviews = () => {
             userName,
             rating,
             review,
-            //this isn't very good, as there's nothing to guarantee that the same review id won't occur some than once.
         };
 
         setReviews([...reviews, newReview]);
