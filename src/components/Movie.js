@@ -3,7 +3,9 @@ import Reviews from "./Reviews";
 import data from "../data"; 
 const Movie = () => {
     const { id } = useParams();
+    console.log(useParams())
     const movie = data.find((item) => item.id === parseInt(id));
+    
 
     if (!movie) {
     return <h2 className="text-center">Movie not found</h2>;

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useId } from "react"
 
 const Reviews = () => {
     const [userName, setUserName] = useState("");
     const [rating, setRating] = useState(1);
     const [review, setReview] = useState("");
     const [reviews, setReviews] = useState([]);
+    const { id } = useId()
     /**
      * 
      * setting to empty strs and rating default rating to 1/5
@@ -20,7 +22,7 @@ const Reviews = () => {
         }
 
         const newReview = {
-            id: Math.random(), 
+            id, 
             userName,
             rating,
             review,
@@ -39,7 +41,7 @@ const Reviews = () => {
     const renderStars = (rating) => {
         return "★".repeat(rating) + "☆".repeat(5 - rating); //inspired by FCC pyramid generator
     };
-//setting review text and rating so that handle event collects the value from click event.  Had some assistance on this.
+    //input field, when the user and rating are entered, and review text length is greater than zero; the reviews array is mapped to li elements with the values of the input
     return (
         <div className="container mt-4">
             <form className="form" onSubmit={handleSubmit}>
