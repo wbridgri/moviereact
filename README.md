@@ -1,1 +1,0 @@
-Download the file, navigate to the root directory in terminal (or the windows equivalent).  From there, run npm i react@latest react-scripts@latest react-dom@latest react-router@latest.  Now enter "npm run dev." And the command line interface should open a local server of the application on the user's browser.
